@@ -1,0 +1,6 @@
+{
+  "name": "SIM Sekolah Nusantara - Sistem Informasi Manajemen & Absensi Barcode",
+  "description": "Aplikasi Manajemen Sekolah terpadu dengan absensi barcode, portal siswa, orang tua, guru, kepala sekolah, dan admin, monitoring KBM, rekap nilai & cetak raport.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

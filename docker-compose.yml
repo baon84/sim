@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # Aplikasi SIM Sekolah
+  sim-sekolah-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sim-sekolah
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+
+  # Cloudflare Tunnel (Opsional: Jika ingin tunnel berjalan langsung di dalam Docker)
+  # Anda hanya perlu memasukkan TUNNEL_TOKEN dari dashboard Cloudflare Zero Trust
+  # cloudflared:
+  #   image: cloudflare/cloudflared:latest
+  #   container_name: cloudflared-tunnel
+  #   restart: unless-stopped
+  #   command: tunnel --no-autoupdate run
+  #   environment:
+  #     - TUNNEL_TOKEN=MASUKKAN_TUNNEL_TOKEN_DARI_CLOUDFLARE_ZERO_TRUST
+  #   depends_on:
+  #     - sim-sekolah-app
